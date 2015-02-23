@@ -1,0 +1,222 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+	background: #42413C;
+	margin: 0;
+	padding: 0;
+	color: #000;
+}
+
+/* ~~ Element/tag selectors ~~ */
+ul, ol, dl { /* Due to variations between browsers, it's best practices to zero padding and margin on lists. For consistency, you can either specify the amounts you want here, or on the list items (LI, DT, DD) they contain. Remember that what you do here will cascade to the .nav list unless you write a more specific selector. */
+	padding: 0;
+	margin: 0;
+}
+h2{
+	font-family:"Times New Roman", Times, serif;
+	color:#63F;
+}
+h1,  h3, h5, h6, p {
+	margin-top: 0;	 /* removing the top margin gets around an issue where margins can escape from their containing div. The remaining bottom margin will hold it away from any elements that follow. */
+	padding-right: 15px;
+	padding-left: 15px; /* adding the padding to the sides of the elements within the divs, instead of the divs themselves, gets rid of any box model math. A nested div with side padding can also be used as an alternate method. */
+}
+h4{
+	font-family:"Times New Roman", Times, serif;
+	color:#06F;
+	text-shadow:#000;
+}
+a img { /* this selector removes the default blue border displayed in some browsers around an image when it is surrounded by a link */
+	border: none;
+}
+
+/* ~~ Styling for your site's links must remain in this order - including the group of selectors that create the hover effect. ~~ */
+a:link {
+	color:#30F;
+	text-decoration:underline;
+	font-weight:bold;
+	font-family:"Times New Roman", Times, serif; /* unless you style your links to look extremely unique, it's best to provide underlines for quick visual identification */
+}
+a:visited {
+	color:#F00;
+	text-decoration:underline;
+	font-weight:bold;
+	font-family:"Times New Roman", Times, serif;
+	
+}
+a:hover, a:active, a:focus { /* this group of selectors will give a keyboard navigator the same hover experience as the person using a mouse. */
+	text-decoration: none;
+}
+
+/* ~~this fixed width container surrounds the other divs~~ */
+.container {
+	width: 900px;
+	background: #FFF;
+	margin: 0 auto; /* the auto value on the sides, coupled with the width, centers the layout */
+}
+.header {
+	height:100px;
+	background-image:url();
+}
+.header {
+	height:100px;
+	background-image:url();
+}
+.sidebar1 {
+	float: right;
+	min-height:900px;
+	width: 295px;
+	background-image:url(../images/bg1.jpg);
+	background-repeat:repeat;
+	}
+.content {
+	border-right:solid #FFF;
+	min-height:900px;
+	background-image:url(../images/bg1.jpg);
+	background-repeat:repeat;
+	width: 600px;
+	float: right;
+	text-align:left;
+}
+
+
+.content ul, .content ol { 
+	padding: 0 15px 15px 40px; ul.nav {
+	list-style: none; 
+	border-top: 1px solid #666; 
+	margin-bottom: 15px; 
+}
+ul.nav li {
+	border-bottom: 1px solid #666; 
+ul.nav a, ul.nav a:visited { 
+	padding: 5px 5px 5px 15px;
+	display: block; 
+	width: 160px;  text-decoration: none;
+	background: #C6D580;
+}
+ul.nav a:hover, ul.nav a:active, ul.nav a:focus { 
+	background: #ADB96E;
+	color: #FFF;
+}
+
+
+.footer {
+	height:100px;
+	width:900px;
+	background: #CCC49F;clear: both;
+}
+
+.fltrt {  
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { float: left;
+	margin-right: 8px;
+}
+.clearfloat {	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}
+#nav{
+	height:25px;
+	background-image:url(../images/hdjpg.jpg);
+	color:#30F;
+	text-decoration:underline;
+	font-weight:bold;
+	font-family:"Times New Roman", Times, serif;
+}
+#ia{
+	height:150px;
+	
+}
+#image{
+	padding:10px;
+	width:100px;
+	height:120px;
+	float:left;
+	color:#FFF;
+	font-size:smaller;
+	text-align:center;
+	font-weight:bolder;
+	font-family:"Times New Roman", Times, serif;
+	
+}
+#ad{
+	color:#00C;
+	text-decoration:underline;
+	font-weight:bold;
+	font-family:"Times New Roman", Times, serif;
+	margin: 0 auto;
+	width:470px;
+	text-align:left;
+	height:100px;
+	float:left;
+	letter-spacing: .1em;
+	vertical-align: .1%;
+	word-spacing: .1em;
+}
+#txt{
+	padding-left:10px;
+	background-color:#000;
+	color:#FFF;
+	border:solid;
+	border-radius: 15px;
+}
+#ads{
+	height:870px;
+	border-bottom:solid #FFF;
+	border-top:solid #FFF;
+	overflow:hidden;
+}
+img{
+	border-radius:15px;
+}
+#pp{
+	height:395px;
+	padding:10px;
+	border-bottom:solid #FFF;
+	overflow:scroll;
+}
+#fr{
+	min-height:180px;
+	overflow:scroll;
+	clear:both;
+}
+#info{
+	color:#03F;
+	border:solid #000;
+	border-radius:15px;
+	font-family:"Times New Roman", Times, serif;
+}
+#free{
+	float:left;
+	width:200px;
+	height:700px;
+	overflow:scroll;
+}
+#mg{
+	float:left;
+	width:380px;
+	padding:5px;
+	height:690px;
+	overflow:scroll;
+}
+#lgi{
+	padding-left:20px;
+}
+.err {
+	
+	font:Garamond;
+	font-size:12px;
+	color:#333;
+}
+
+.he {
+	
+	font:Garamond;
+	font-size:14px;
+	color:#333;
+}
