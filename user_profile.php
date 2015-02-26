@@ -12,7 +12,37 @@
 	$("#info tr:even").css("background-color","#FFFFFF");
 });*/
 </script>
-
+<?php
+require("../social/include/database.php");
+require("../social/include/functions.php");
+$query = "select * from user whre user_id = '".$_SESSION['id']."'";
+ $insert = mysql_query($query);
+ $reader = mysql_fetch_assoc($insert);
+ if(isset($_POST['post'])){
+	 wom($_POST['wom']);
+	 header("Location:mainpage.php");
+ }
+ if(isset($_POST['submit'])){
+				$fileTmpLoc = $_FILES["pic"]["tmp_name"];
+			 $fileName = basename ($_FILES["pic"]["name"]); 
+			 $path2 = "uploads/thumbs/".$_SESSION['id']."/logo/".$fileName;
+			 createthumb($fileTmpLoc,$path2);
+			$userid =$_GET['id']; 
+			$nation = trim($_POST['nation']);
+			$loc = trim($_POST['loc']);
+			$dob= trim($_POST['dob']);
+			$favt = trim($_POST['favt']);
+			$like = trim($_POST['likes']);
+			$question = $_POST['question'];
+			$answer = $_POST['ans'];
+			$email = trim($_POST['email']);
+			$img = trim($_POST['pic']);
+			newuser($userid,$nation,$loc,$dob,$favt,$like,$question,$answer,$email,$path2);
+		}
+ if(!isset($_SESSION['user'])){
+	header("Location:login.php");
+}
+?>
 <link href="../social/SpryAssets/SpryValidationTextField.css" rel="stylesheet" type="text/css" />
 </head>
 
