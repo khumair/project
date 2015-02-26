@@ -11,7 +11,35 @@
 	$("#info tr:even").css("background-color","#FFFFFF");
 });*/
 </script>
+<?php
+require("include/database.php");
+require("include/funtions.php");
+$query = "select * from user where user_id = '".$_SESSION['id']."'";
+ $insert = mysql_query($query);
+ $reader = mysql_fetch_assoc($insert);
+ if(isset($_POST['post'])){
+	 wom($_POST['wom']);
+	 header("Location:mainpage.php");
+ }
+ if(!isset($_SESSION['user'])){
+	header("Location:login.php");
+}
 
+if(isset($_POST['up'])){
+$alid = $_GET['sd'];
+	 $fileName = basename ($_FILES["uploaded_file"]["name"]); 
+	 $fileTmpLoc = $_FILES["uploaded_file"]["tmp_name"];
+	 $path = "uploads/".$_SESSION['id']."/".$fileName;
+	 $path2 = "uploads/thumbs/".$_SESSION['id']."/".$fileName;
+	createthumb($fileTmpLoc,$path2);
+	 if(move_uploaded_file($fileTmpLoc,$path)){
+		$query = "INSERT INTO `gallery`.`image`(`user_id`,`user_name`,`album_id`,`path`,`thumbnail`) VALUES('".$_SESSION['id']."','".$_SESSION['user']."','$alid','$path','$path2')";
+		$inst = mysql_query($query);
+		header("Location:album.php");
+	}
+
+}
+?>
 </head>
 
 <body>
